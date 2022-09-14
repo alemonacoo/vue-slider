@@ -33,7 +33,11 @@ const app = new Vue(
         el: "#app",
         data: {
             activeIndex: 0,
-            slides
+            slides,
+            intervalId: undefined
+        },
+        mounted(){
+            this.intervalId = setInterval(this.showNextImg, 3000);
         },
         methods:{
             showPreviousImg(){
