@@ -27,3 +27,40 @@ const slides = [
 ];
 
 console.log(slides);
+
+const app = new Vue(
+    {
+        el: "#app",
+        data: {
+            activeIndex: 0,
+            slides
+        },
+        methods:{
+            showPreviousImg(){
+                if(this.activeIndex > 0){
+                this.activeIndex--;
+            }
+                else{
+                    this.activeIndex = this.slides.length -1;
+                }
+            },
+            showNextImg(){
+                if(this.activeIndex < this.slides.length -1){
+                    this.activeIndex++;
+                }
+                 else{
+                    this.activeIndex = 0;
+                }
+            },
+            selectImg(index){
+                this.activeIndex = index;
+
+            }
+        }
+
+    }
+)
+
+
+
+
